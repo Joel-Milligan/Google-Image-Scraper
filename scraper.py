@@ -2,11 +2,21 @@ import requests
 from bs4 import BeautifulSoup
 import os
 import urllib
+from sys import argv, exit
 
 def main():
-    number_of_images = 5
-    search_term = "cat"
-    
+    argc = len(argv)
+
+    if argc == 1:
+        search_term = "cat"
+        number_of_images = 10
+    elif argc == 2:
+        search_term = argv[1]
+        number_of_images = 10
+    else:
+        search_term = argv[1]
+        number_of_images = int(argv[2])
+
     google_image_url = f"https://www.google.com/search?q={search_term}&tbm=isch"
     res = requests.get(google_image_url)
     soup = BeautifulSoup(res.text, 'html.parser')
@@ -16,7 +26,7 @@ def main():
     while making_file:
         dir_name = f"./{number_of_images}-images-of-{search_term}-v{i}"
         try:
-    os.mkdir(dir_name)
+            os.mkdir(dir_name)
             making_file = False
         except FileExistsError:
             i += 1
