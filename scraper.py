@@ -11,8 +11,15 @@ def main():
     res = requests.get(google_image_url)
     soup = BeautifulSoup(res.text, 'html.parser')
 
-    dir_name = f"./{number_of_images}-images-of-{search_term}"
+    making_file = True
+    i = 1
+    while making_file:
+        dir_name = f"./{number_of_images}-images-of-{search_term}-v{i}"
+        try:
     os.mkdir(dir_name)
+            making_file = False
+        except FileExistsError:
+            i += 1
 
     images = soup.find_all("img")
     images = images[1:]
