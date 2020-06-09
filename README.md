@@ -1,7 +1,16 @@
 # Google-Image-Scraper
 Scrapes and saves a certain number of google images returned from a specific search term.
 
-## 1.0 Instructions
-Call the script with: $ python scraper.py search_term #_results
+## Instructions:
+Call the script with: 
+1. $ python scraper.py search_term #_results
+2. $ python scraper.py search_term (default number = 10)
+3. $ python scraper.py
 
-Saves the image results in a file called "# images of search_term"
+Default arguments if missing values:
+- search_term = "cat"
+- #_results = 10
+
+Saves the image results in a file called "#-images-of-search_term-v1"
+
+Version number changes if there is already a folder called "#-images-of-search_term-v1"
