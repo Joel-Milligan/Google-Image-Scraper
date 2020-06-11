@@ -3,8 +3,8 @@ Scrapes and saves a certain number of google images returned from a specific sea
 
 ## Instructions:
 Call the script with: 
-1. $ python scraper.py search_term #_results
-2. $ python scraper.py search_term (default number = 10)
+1. $ python scraper.py search_term1 search_term2 #_results
+2. $ python scraper.py search_term1 search_term2 (default number = 10)
 3. $ python scraper.py
 
 Default arguments if missing values:
